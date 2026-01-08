@@ -15,6 +15,7 @@
     "express-fileupload": "^1.5.2",
     "fileupload": "^1.0.0",
     "mongoose": "^8.20.0",
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "tesseract.js": "^7.0.0"
   }
 }
