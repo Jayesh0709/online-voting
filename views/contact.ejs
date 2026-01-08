@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support | e-Vote India</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+</head>
+
+<body>
+    <div class="dashboard-header">
+        <div class="logo">
+            <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="21" fill="#138808" />
+                <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
+                <circle cx="24" cy="24" r="11" fill="#138808" />
+            </svg>
+            <span>Bharat<span class="highlight">Vote</span></span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/dashboard">Vote</a></li>
+                <li><a href="/result">Results</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section class="contact-hero">
+            <div class="icon-container">
+                <i data-feather="mail"></i>
+            </div>
+            <h1>Contact & Support</h1>
+            <p>Your connection to secure voting assistance</p>
+        </section>
+
+        <section class="contact-container">
+            <div class="form-wrapper">
+                <h2>Get In Touch</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="msg">Your Message</label>
+                        <textarea class="form-control" id="msg" minlength="20" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i data-feather="send"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+            <div class="support-card">
+                <div class="card-header">
+                    <h2><i data-feather="headphones"></i> Support Center</h2>
+                </div>
+                <div class="card-body">
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i data-feather="mail" stroke="#138808"></i>
+                        </div>
+                        <div class="support-content">
+                            <h3>Email Support</h3>
+                            <a href="mailto:support@evoteindia.in">support@evoteindia.in</a>
+                            <p>Typically replies within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i data-feather="phone" stroke="#000080"></i>
+                        </div>
+                        <div class="support-content">
+                            <h3>Phone Support</h3>
+                            <a href="tel:+9118001234567">+91-1800-123-4567</a>
+                            <p>Toll-free in India</p>
+                        </div>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i data-feather="clock" stroke="#FF9933"></i>
+                        </div>
+                        <div class="support-content">
+                            <h3>Office Hours</h3>
+                            <p>Monday to Friday<br>9 AM to 6 PM IST</p>
+                        </div>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i data-feather="map-pin" stroke="#FF9933"></i>
+                        </div>
+                        <div class="support-content">
+                            <h3>Headquarters</h3>
+                            <p>Election Commission of India<br>New Delhi 110001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item" id="faq1">
+                    <div class="faq-question" onclick="toggleFaq('faq1')">
+                        How do I register for online voting?
+                        <i class="icon-right" data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>First-time voters must register at any designated enrollment center with valid ID and proof
+                            of citizenship. Once registered, you'll receive a Bharatque voter ID that can be activated for
+                            online voting through our secure portal.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faq2">
+                    <div class="faq-question" onclick="toggleFaq('faq2')">
+                        Is online voting secure?
+                        <i class="icon-right" data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our platform uses military-grade encryption, blockchain technology, multi-factor
+                            authentication, and end-to-end verifiability to ensure your vote remains secure, anonymous,
+                            and tamper-proof throughout the election process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faq3">
+                    <div class="faq-question" onclick="toggleFaq('faq3')">
+                        What if I experience technical issues during voting?
+                        <i class="icon-right" data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Contact our support team immediately at support@evoteindia.in or call our help desk. We
+                            maintain 24/7 technical support during election periods and can assist with
+                            re-authentication or issue resolution without compromising your ballot secrecy.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faq4">
+                    <div class="faq-question" onclick="toggleFaq('faq4')">
+                        Can non-resident Indians (NRIs) vote in elections?
+                        <i class="icon-right" data-feather="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Registered NRIs can participate in national elections through our platform. You must have a
+                            valid Indian passport and enrollment in the NRI voter registry. State elections eligibility
+                            varies - check our voter guidelines section for constituency-specific regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>BharatVote</h3>
+                    <p>India's premier online voting platform. Making democracy accessible, secure, and transparent for every Indian citizen.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-feather="facebook"></i></a>
+                        <a href="#"><i data-feather="twitter"></i></a>
+                        <a href="#"><i data-feather="instagram"></i></a>
+                        <a href="#"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="voting.html">Voting Process</a></li>
+                        <li><a href="results.html">Election Results</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                 -->
+                <!-- <div class="footer-col">
+                    <h3>Election Info</h3>
+                    <ul>
+                        <li><a href="/voting">Current Elections</a></li>
+                        <li><a href="/resultshtml">Past Results</a></li>
+                        <li><a href="candidates.html">Candidate Profiles</a></li>
+                        <li><a href="faq.html">Voter FAQ</a></li>
+                        <li><a href="admin.html">Admin Portal</a></li>
+                    </ul>
+                </div> -->
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i data-feather="mail"></i>
+                        <span>support@Bharatvote.in</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="phone"></i>
+                        <span>011-2345-6789</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="map-pin"></i>
+                        <span>Electoral Commission Building, New Delhi</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 BharatVote. Created by the Election Commission of India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

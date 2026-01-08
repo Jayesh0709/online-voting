@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Dashboard - BharatVote</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="container">
+        <% if(message){ %>
+            <div id="msg"
+                style="padding: 20px; background: #61b81a; color: rgb(18, 15, 38); border-radius: 5px; margin-bottom: 15px;font-weight: bold;">
+                <p>
+                    <%= message %>
+                </p>
+            </div>
+            <% } %>
+                <div class="dashboard-header">
+                    <div class="logo">
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="21" fill="#138808" />
+                            <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
+                            <circle cx="24" cy="24" r="11" fill="#138808" />
+                        </svg>
+                        <h1 class="dashboard-title">Voter Dashboard</h1>
+                    </div>
+
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/dashboard">Vote</a></li>
+                            <li><a href="/result">Results</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="status-indicator status-active">
+                        <i data-feather="circle" width="10" height="10"></i>
+                        ELECTION ACTIVE NOW
+                    </div>
+                </div>
+    </div>
+
+
+    <div class="container dashboard-container">
+        <aside class="sidebar">
+            <div class="voter-card">
+                <div class="voter-avatar">
+                    <i data-feather="user" width="40" height="40" stroke="var(--blue)"></i>
+                </div>
+                <div class="voter-name">
+                    <% if(userName){ %>
+                        <%= userName %>
+                            <% } %>
+                </div>
+                <div class="voter-id">DL/02/1245/20223</div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i data-feather="home"></i>
+                    Dashboard
+                </a>
+                <a href="/voting" class="nav-item">
+                    <i data-feather="check-square"></i>
+                    Cast Vote
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-feather="user"></i>
+                    Profile
+                </a>
+                <a href="#" class="nav-item" style="display: none;">
+                    <i data-feather="shield"></i>
+                    Security
+                </a>
+                <a href="#" class="nav-item" style="display: none;">
+                    <i data-feather="archive"></i>
+                    Vote History
+                </a>
+                <a href="#" class="nav-item" style="display: none;">
+                    <i data-feather="mail"></i>
+                    Notifications
+                </a>
+                <a href="#" class="nav-item" style="display: none;">
+                    <i data-feather="settings"></i>
+                    Account Settings
+                </a>
+                <a href="/logout" class="nav-item logout-item">
+                    <i data-feather="log-out"></i>
+                    Logout
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="alert-card">
+                <div class="alert-content">
+                    <h3>Current Election: Delhi Assembly Election</h3>
+                    <p>You haven't cast your vote yet. Election closes in 2 days 17 hours. Cast your vote now to ensure
+                        your voice is heard!</p>
+                    <a href="/voting" class="alert-btn">
+                        <i data-feather="pen-tool"></i>
+                        Cast Your Vote Now
+                    </a>
+                </div>
+                <div style="width: 120px;">
+                    <i data-feather="alert-circle" width="100" height="100" stroke="var(--saffron)"></i>
+                </div>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stats-card">
+                    <div class="stats-icon icon-bg-blue">
+                        <i data-feather="user-check" stroke="var(--blue)" width="30" height="30"></i>
+                    </div>
+                    <div class="stats-number">85%</div>
+                    <div class="stats-label">Registered Voters</div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-icon icon-bg-success">
+                        <i data-feather="award" stroke="var(--success)" width="30" height="30"></i>
+                    </div>
+                    <div class="stats-number">48</div>
+                    <div class="stats-label">Elections Participated</div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-icon icon-bg-orange">
+                        <i data-feather="clock" stroke="var(--saffron)" width="30" height="30"></i>
+                    </div>
+                    <div class="stats-number">1 Day 12:32:58</div>
+                    <div class="stats-label">Time Remaining</div>
+                </div>
+            </div>
+
+            <div class="dashboard-section" style="display: none;">
+                <h2
+                    style="font-family: 'Hind', sans-serif; font-size: 1.7rem; margin-bottom: 20px; color: var(--blue);">
+                    My Voting Actions</h2>
+
+                <div class="action-cards">
+                    <div class="action-card">
+                        <h3><i data-feather="check-circle"></i> Verify Eligibility</h3>
+                        <p>Check your eligibility status for upcoming elections. Ensure all documents are verified.</p>
+                        <a href="#" class="card-btn">Check Status</a>
+                    </div>
+
+                    <div class="action-card">
+                        <h3><i data-feather="user"></i> Update Profile</h3>
+                        <p>Review and update your demographic information for accurate electoral records.</p>
+                        <a href="#" class="card-btn">Edit Profile</a>
+                    </div>
+
+                    <div class="action-card">
+                        <h3><i data-feather="file-text"></i> View Voting History</h3>
+                        <p>Access your complete voting records for all elections you've participated in.</p>
+                        <a href="#" class="card-btn">View History</a>
+                    </div>
+
+                    <div class="action-card">
+                        <h3><i data-feather="shield"></i> Security Settings</h3>
+                        <p>Manage your two-factor authentication, password, and login security preferences.</p>
+                        <a href="#" class="card-btn">Secure Account</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>BharatVote</h3>
+                    <p>India's premier online voting platform. Making democracy accessible, secure, and transparent for
+                        every Indian citizen.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-feather="facebook"></i></a>
+                        <a href="#"><i data-feather="twitter"></i></a>
+                        <a href="#"><i data-feather="instagram"></i></a>
+                        <a href="#"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+
+               
+             
+
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i data-feather="mail"></i>
+                        <span>support@Bharatvote.in</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="phone"></i>
+                        <span>011-2345-6789</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="map-pin"></i>
+                        <span>Electoral Commission Building, New Delhi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2023 BharatVote. Created by the Election Commission of India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        feather.replace();
+        document.querySelector(".logout-item").addEventListener("click", (e) => {
+            window.location.href = "/logout";
+        })
+
+        let t1 = gsap.timeline();
+        t1.from("#msg", {
+            x: -200,
+            opacity: 0,
+            duration: 0.7,
+        })
+        t1.to("#msg", {
+            x: -240,
+            opacity: 0,
+            delay: 2.5,
+            duraion: 0.6,
+        })
+    </script>
+</body>
+
+</html>

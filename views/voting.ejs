@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote Now - BharatVote</title>
+  <link rel="stylesheet" href="./css/voting.css">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header-container">
+      <div class="logo">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="21" fill="#138808" />
+          <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
+          <circle cx="24" cy="24" r="11" fill="#138808" />
+        </svg>
+        <span>Bharat<span class="highlight">Vote</span></span>
+      </div>
+      <a href="/dashboard" class="btn btn-outline">Back to Dashboard</a>
+    </div>
+
+    <div class="voting-header">
+      <h1 class="voting-title">Voting Booth</h1>
+      <p style="max-width: 700px; margin: 0 auto; color: #555;">
+        Exercise your democratic right. Your vote is secret and securely recorded.
+      </p>
+    </div>
+
+    <div class="election-info">
+      <div class="info-item">
+        <div class="info-title">Election</div>
+        <div class="info-content">17th Delhi Assembly Election</div>
+      </div>
+      <div class="info-item">
+        <div class="info-title">Constituency</div>
+        <div class="info-content">New Delhi District (05)</div>
+      </div>
+      <div class="info-item">
+        <div class="info-title">Status</div>
+        <div class="info-content" style="color: var(--green);">Active - Open for Voting</div>
+      </div>
+      <div class="info-item">
+        <div class="info-title">Voting Deadline</div>
+        <div class="info-content">28 May 2025, 18:00 IST</div>
+      </div>
+    </div>
+
+    <h2 class="candidates-title">Select Your Candidate</h2>
+
+    <div class="candidates-grid">
+      <div class="candidate-card">
+        <img src="http://static.photos/people/320x240/15" class="candidate-img">
+        <div class="candidate-name">Arjun Singh</div>
+        <div class="candidate-party">Aam Aadmi Party</div>
+        <div class="candidate-info">
+          <p>Local activist focused on healthcare and education.</p>
+          <p><em>"Naye Delhi Ki Nayi Soch"</em></p>
+        </div>
+        <button class="vote-btn" id="partyA"  <%=uservoted ?"disabled":"" %>>Vote for Arjun</button>
+      </div>
+
+      <div class="candidate-card">
+        <img src="http://static.photos/people/320x240/19" class="candidate-img">
+        <div class="candidate-name">Yogesh Sharma</div>
+        <div class="candidate-party">Bharatiya Janata Party</div>
+        <div class="candidate-info">
+          <p>Focus on infrastructure and economic growth.</p>
+          <p><em>"Sabka Saath, Sabka Vikas"</em></p>
+        </div>
+        <button class="vote-btn" id="partyB"  <%=uservoted ?"disabled":"" %>>Vote for Yogesh</button>
+      </div>
+
+      <div class="candidate-card">
+        <img src="http://static.photos/people/320x240/16" class="candidate-img">
+        <div class="candidate-name">Sanjay Patel</div>
+        <div class="candidate-party">Indian National Congress</div>
+        <div class="candidate-info">
+          <p>Focus on agriculture and youth employment.</p>
+          <p><em>"Badlegi Soch, Badlega Pradesh"</em></p>
+        </div>
+        <button class="vote-btn" id="partyC" <%=uservoted ?"disabled":"" %>>
+          Vote for Sanjay
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+
+
+    const buttons = document.querySelectorAll(".vote-btn");
+    buttons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        const selected = e.target.id;
+        console.log("frontend voted name", selected);
+        fetch('/vote', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ party: selected })
+        }).then(res => res.json()).then(data => {
+          if (data.success) {
+            alert("Your vote has been recorded successfully!");
+            window.location.href = "/dashboard";
+          } else {
+            alert("There was an error recording your vote. Please try again.");
+          }
+
+        })
+      })
+    })
+
+  </script>
+
+</body>
+
+</html>

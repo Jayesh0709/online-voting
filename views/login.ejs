@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BharatVote</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <div class="dashboard-header">
+        <div class="logo">
+            <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="21" fill="#138808" />
+                <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
+                <circle cx="24" cy="24" r="11" fill="#138808" />
+            </svg>
+            <span>Bharat<span class="highlight">Vote</span></span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/dashboard">Vote</a></li>
+                <li><a href="/result">Results</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="login-container">
+        <div class="login-image">
+            <div class="image-content">
+                <h2>Every Vote Counts</h2>
+                <p>Welcome back to India's secure voting platform. Exercise your democratic right with confidence.</p>
+                <div
+                    style="margin-top: 30px; background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px;">
+                    <i data-feather="lock" stroke="white" width="40" height="40"></i>
+                    <h3 style="margin: 15px 0;">Bank-Level Security</h3>
+                    <p>Your vote and identity are protected with military-grade encryption</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-form">
+            <div class="login-header">
+                <div class="logo">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="21" fill="#138808" />
+                        <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
+                        <circle cx="24" cy="24" r="11" fill="#138808" />
+                    </svg>
+                    <span>Bharat<span style="color: #138808;">Vote</span></span>
+                </div>
+                <h1 class="login-title">Secure Voter Login</h1>
+                <p class="login-subtitle">Enter your credentials to access your voting dashboard</p>
+            </div>
+
+            <form id="loginForm" method="post" action="/login">
+                <div class="form-group">
+                    <label class="form-label" for="email">Aadhaar</label>
+                    <input type="text" id="email" class="form-input" name="aadhaar" placeholder="hello@Bharatvote.in"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-input" name="password" placeholder="••••••••"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <div class="forgot-password">
+                        <a href="password-reset.html">Forgot Password?</a>
+                    </div>
+                </div>
+                <% if(error){ %>
+                    <div class="error">
+                        wrong password
+                    </div>
+                    <% } %>
+                        <div class="form-group">
+                            <button type="submit" class="btn login-btn">Login to Your Account</button>
+                        </div>
+            </form>
+
+            <div class="alternate-login">
+                <span>Or continue with</span>
+            </div>
+
+            <div class="social-login">
+                <a href="#" class="social-btn">
+                    <i data-feather="smartphone"></i>
+                </a>
+                <a href="#" class="social-btn">
+                    <i data-feather="award"></i>
+                </a>
+                <a href="#" class="social-btn">
+                    <i data-feather="message-square"></i>
+                </a>
+            </div>
+
+            <p class="register-link">Need an account? <a href="/register">Register here</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>BharatVote</h3>
+                    <p>India's premier online voting platform. Making democracy accessible, secure, and transparent for
+                        every Indian citizen.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-feather="facebook"></i></a>
+                        <a href="#"><i data-feather="twitter"></i></a>
+                        <a href="#"><i data-feather="instagram"></i></a>
+                        <a href="#"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="voting.html">Voting Process</a></li>
+                        <li><a href="results.html">Election Results</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- <div class="footer-col">
+                    <h3>Election Info</h3>
+                    <ul>
+                        <li><a href="voting.html">Current Elections</a></li>
+                        <li><a href="results.html">Past Results</a></li>
+                        <li><a href="candidates.html">Candidate Profiles</a></li>
+                        <li><a href="faq.html">Voter FAQ</a></li>
+                        <li><a href="admin.html">Admin Portal</a></li>
+                    </ul>
+                </div> -->
+
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i data-feather="mail"></i>
+                        <span>support@Bharatvote.in</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="phone"></i>
+                        <span>011-2345-6789</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="map-pin"></i>
+                        <span>Electoral Commission Building, New Delhi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2023 BharatVote. Created by the Election Commission of India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // feather.replace();
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            // e.preventDefault();
+            window.location.href = '/dashboard';
+        });
+        setTimeout(() => {
+            document.querySelector(".error").style.display = "none";
+        }, 3000);
+    </script>
+</body>
+
+</html>

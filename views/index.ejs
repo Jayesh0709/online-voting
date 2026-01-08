@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BharatVote - Secure Online Voting</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <svg width="48" height="48" viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="21" fill="#138808" />
+                    <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
+                    <circle cx="24" cy="24" r="11" fill="#138808" />
+                </svg>
+                <span>Bharat<span class="highlight">Vote</span></span>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/dashboard">Vote</a></li>
+                    <li><a href="/result">Results</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <% if(userId){ %>
+                <div class="nav-buttons">
+                    <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+                    <a href="/logout" class="btn btn-outline">Logout</a>
+                </div>
+                <% }else{ %>
+                    <div class="nav-buttons">
+                        <a href="/login" class="btn btn-outline">Login</a>
+                        <a href="/register" class="btn btn-primary">Register</a>
+                    </div>
+                    <% } %>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Secure Digital Democracy for Every Indian</h1>
+            <p>Empowering citizens with a transparent, accessible, and trustworthy online voting platform. Your vote,
+                your voice - safeguarded with cutting-edge technology and uncompromising integrity.</p>
+            <% if(userId){ %>
+                <div class="cta-buttons">
+                    <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+                </div>
+                <% }else{ %>
+                    <div class="cta-buttons">
+                        <a href="/register" class="btn btn-primary">Register to Vote</a>
+                        <a href="/login" class="btn btn-secondary">Login to Platform</a>
+                    </div>
+                    <% } %>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Bharat Vote ?</h2>
+            <div class="features-grid">
+                <div class="feature-card secure">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Military-Grade Security</h3>
+                    <p>Our platform use multi-factor authentication to ensure your vote remains confidential and
+                        tamper-proof.</p>
+                </div>
+                <div class="feature-card transparent">
+                    <div class="feature-icon">👁️</div>
+                    <h3>Complete Transparency</h3>
+                    <p>Verifiable audit trails and open-source protocols allow public oversight while maintaining voter
+                        anonymity and electoral integrity.</p>
+                </div>
+                <div class="feature-card easy">
+                    <div class="feature-icon">📱</div>
+                    <h3>Accessible to All</h3>
+                    <p>Designed for simplicity with multilingual support and accessibility features, ensuring every
+                        eligible Indian can participate effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Shape India's Future?</h2>
+            <p>Join millions of empowered citizens casting their votes securely from anywhere. Register today and be
+                part of the digital democracy revolution.</p>
+            <div class="cta-buttons light" style="display: flex; justify-content: center; gap: 1rem;">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>BharatVote</h3>
+                    <p>India's premier online voting platform. Making democracy accessible, secure, and transparent for
+                        every Indian citizen.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-feather="facebook"></i></a>
+                        <a href="#"><i data-feather="twitter"></i></a>
+                        <a href="#"><i data-feather="instagram"></i></a>
+                        <a href="#"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i data-feather="mail"></i>
+                        <span>support@Bharatvote.in</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="phone"></i>
+                        <span>011-2345-6789</span>
+                    </div>
+                    <div class="contact-info">
+                        <i data-feather="map-pin"></i>
+                        <span>Electoral Commission Building, New Delhi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2023 BharatVote. Created by the Election Commission of India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

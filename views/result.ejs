@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results - Digital Bharat Voting</title>
+    <link rel="stylesheet" href="./css/result.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+
+<body>
+    <div class="dashboard-header">
+        <div class="logo">
+            <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="21" fill="#138808" />
+                <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
+                <circle cx="24" cy="24" r="11" fill="#138808" />
+            </svg>
+            <span>Bharat<span class="highlight">Vote</span></span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/dashboard">Vote</a></li>
+                <li><a href="/result">Results</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div role="heading" aria-level="1" class="page-title">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--saffron-results)"
+                class="shield-icon">
+                <path
+                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 19.91V9H5V6.3l7-3.11 7 3.11V9h-7v11.91z" />
+                <path fill="var(--green-results)"
+                    d="M10.47 15.82l-2.1-2.1 1.42-1.41 1.68 1.68 3.71-3.71 1.42 1.41-5.13 5.13z" />
+            </svg>
+            <h1 tabindex="0">Election Results</h1>
+        </div>
+
+        <div class="election-name" aria-label="Current election">Lok Sabha 2025</div>
+
+        <div class="candidate-grid" role="grid" aria-label="Candidate Results">
+            <div class="grid-header">Candidate Name</div>
+            <div class="grid-header">Party</div>
+            <div class="grid-header">Photo</div>
+            <div class="grid-header">Votes</div>
+
+            <div class="candidate-cell" role="gridcell">Dr. Rajesh Verma</div>
+            <div class="candidate-cell" role="gridcell">
+                <span class="party-badge" style="background:#138808">BJP</span>
+            </div>
+            <div class="candidate-cell" role="gridcell">
+                <div class="photo-placeholder" aria-label="Candidate photo placeholder"></div>
+            </div>
+            <div class="candidate-cell" role="gridcell">
+                <span class="vote-animation" style="animation-delay: 0.3s">
+                    <%= A %>
+                </span>
+            </div>
+
+            <div class="candidate-cell" role="gridcell">Meera Singh</div>
+            <div class="candidate-cell" role="gridcell">
+                <span class="party-badge" style="background:#19AA8D">AAP</span>
+            </div>
+            <div class="candidate-cell" role="gridcell">
+                <div class="photo-placeholder" aria-label="Candidate photo placeholder"></div>
+            </div>
+            <div class="candidate-cell" role="gridcell">
+                <span class="vote-animation" style="animation-delay: 0.6s">
+                    <%= B %>
+                </span>
+            </div>
+
+            <div class="candidate-cell" role="gridcell">Prof. Amir Khan</div>
+            <div class="candidate-cell" role="gridcell">
+                <span class="party-badge" style="background:#EC1C24">INC</span>
+            </div>
+            <div class="candidate-cell" role="gridcell">
+                <div class="photo-placeholder" aria-label="Candidate photo placeholder"></div>
+            </div>
+            <div class="candidate-cell" role="gridcell">
+                <span class="vote-animation" style="animation-delay: 0.9s">
+                    <%= C %>
+                </span>
+            </div>
+        </div>
+
+        <div class="results-container" role="region" aria-label="Vote Distribution">
+            <h2 class="chart-title">Vote Distribution</h2>
+            <div class="dashboard">
+
+                <div class="chart-section">
+                    <div class="canvas-wrapper">
+                        <canvas id="voteChart" width="640" height="640"
+                            style="display: block; box-sizing: border-box; height: 320px; width: 320px;"></canvas>
+                    </div>
+
+                    <div class="center-text">
+                        <div class="label-winner">WINNER</div>
+                        <div class="label-party">BJP</div>
+                        <div class="label-votes">517,892 votes</div>
+                    </div>
+                </div>
+
+                <div class="cards-container">
+
+                    <div class="card">
+                        <div class="card-left">
+                            <div class="color-box bg-bjp"></div>
+                            <div class="party-info">
+                                <span class="party-name">BJP</span>
+                                <span class="party-votes-sub">517,892 votes</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <span class="percentage-text">
+                                <%= Aper %> %
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-left">
+                            <div class="color-box bg-aap"></div>
+                            <div class="party-info">
+                                <span class="party-name">AAP</span>
+                                <span class="party-votes-sub">492,673 votes</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <span class="percentage-text">
+                                <%= Bper %> %
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-left">
+                            <div class="color-box bg-inc"></div>
+                            <div class="party-info">
+                                <span class="party-name">INC</span>
+                                <span class="party-votes-sub">378,420 votes</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <span class="percentage-text">
+                                <%= Cper %> %
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="live-indicator">
+                <div class="pulse-dot" aria-hidden="true"></div>
+                <span class="live-text">LIVE RESULTS</span>
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>BharatVote</h3>
+                <p>India's premier online voting platform. Making democracy accessible, secure, and transparent for
+                    every Indian citizen.</p>
+                <div class="social-links">
+                    <a href="#"><i data-feather="facebook"></i></a>
+                    <a href="#"><i data-feather="twitter"></i></a>
+                    <a href="#"><i data-feather="instagram"></i></a>
+                    <a href="#"><i data-feather="linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <i data-feather="mail"></i>
+                    <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="265553565649545266444e4754475250495243084f48">[email&#160;protected]</a></span>
+                </div>
+                <div class="contact-info">
+                    <i data-feather="phone"></i>
+                    <span>011-2345-6789</span>
+                </div>
+                <div class="contact-info">
+                    <i data-feather="map-pin"></i>
+                    <span>Electoral Commission Building, New Delhi</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© 2023 BharatVote. Created by the Election Commission of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="chart-tooltip" id="chartTooltip"></div>
+
+    <script>
+        const p1 = <%- JSON.stringify(Aper)%>;
+        const p2 = <%- JSON.stringify(Bper)%>;
+        const p3 = <%- JSON.stringify(Cper)%>;
+        console.log(p1 + "   " + p2 + "    " + p3)
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('voteChart').getContext('2d');
+
+            // Data Configuration
+
+            const data = {
+                labels: ['BJP', 'AAP', 'INC'],
+                datasets: [{
+                    data: [p1, p2, p3], // Percentages determining slice size
+                    backgroundColor: [
+                        '#068525', // BJP Green
+                        '#00a896', // AAP Teal
+                        '#e01717'  // INC Red
+                    ],
+                    borderWidth: 0, // Clean look without white borders
+                    hoverOffset: 5  // Slight pop on hover
+                }]
+            };
+
+            // Chart Configuration
+            const config = {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    cutout: '75%', // Makes the ring thick
+                    plugins: {
+                        legend: {
+                            display: false // We are using custom cards instead
+                        },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function (context) {
+                                    return ' ' + context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            };
+
+            // Render Chart
+            new Chart(ctx, config);
+        });
+    </script>
+</body>
+
+</html>

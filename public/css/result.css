@@ -1,0 +1,657 @@
+:root {
+            --saffron: #FF9933;
+            /* Updated: login.html Saffron */
+            --white: #FFFFFF;
+            --green: #138808;
+            /* Updated: login.html Green */
+            --blue: #000080;
+            /* Updated: login.html Blue (Navy) */
+            --light-gray: #f8f9fa;
+            /* Variables from results.html kept for main content styles */
+            --navy: #000080;
+            --saffron-results: #FF8F1C;
+            /* Renamed to avoid conflict */
+            --green-results: #046A38;
+            /* Renamed to avoid conflict */
+            --text-dark: #212121;
+            --light-stroke: #EEEEEE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Updated: login.html Font */
+            background-color: var(--white);
+            /* Adjusted to white for results main content to blend */
+            color: var(--blue);
+            min-height: 100vh;
+            line-height: 1.6;
+            /* Added from results.html */
+        }
+
+        /* Navbar Styles from login.html */
+        .dashboard-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            /* Kept for spacing */
+            padding: 10px 0;
+            /* Adjusted padding */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo span {
+            font-family: 'Hind', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            /* margin-left: 10px; */
+            color: var(--blue);
+        }
+        .logo :nth-child(1){
+margin-right: 10px;
+}
+
+        .logo span .highlight {
+            color: var(--green);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--blue);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--saffron);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content Styles from results.html */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            color: var(--text-dark);
+            /* Ensure text is visible against white background */
+        }
+
+        .page-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .shield-icon {
+            width: 36px;
+            height: 36px;
+            fill: var(--saffron-results);
+            /* Use the specific color from results.html */
+        }
+
+        .shield-icon path:nth-child(2) {
+            fill: var(--green-results);
+            /* Use the specific color from results.html */
+        }
+
+        .election-name {
+            font-size: 1.4rem;
+            background: rgba(4, 106, 56, 0.08);
+            color: var(--green-results);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 1.5rem;
+            gap: 8px;
+            position: relative;
+            /* Changed from absolute for flow */
+            right: auto;
+            bottom: auto;
+            margin-top: 30px;
+        }
+
+        .pulse-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--saffron-results);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            70% {
+                opacity: 0.2;
+                transform: scale(2);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(2.5);
+            }
+        }
+
+        .live-text {
+            font-weight: 700;
+            color: var(--saffron-results);
+        }
+
+        /* Candidate Grid */
+        .candidate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid-header {
+            font-weight: 700;
+            padding: 0.8rem;
+            border-bottom: 2px solid var(--light-stroke);
+            color: var(--navy);
+        }
+
+        .candidate-row {
+            display: contents;
+        }
+
+        .candidate-cell {
+            padding: 1rem 0.8rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-stroke);
+        }
+
+        .candidate-cell:nth-child(4) {
+            font-weight: 600;
+        }
+
+        .party-badge {
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            /* Note: party-badge color is overwritten inline in the HTML rows */
+            color: white;
+            font-weight: 500;
+        }
+
+        .photo-placeholder {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #f0f5ff;
+            border: 2px dashed var(--green-results);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vote-animation {
+            animation: countUp 1.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        @keyframes countUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* New Pie Chart Styles */
+        .results-container {
+            background: #f9faff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--saffron-results), white, var(--green-results));
+        }
+
+        .chart-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--navy);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        /*-----------------   trail    ------------------- */
+
+
+        .dashboard {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* --- Left Side: Donut Chart Section --- */
+        .chart-section {
+            position: relative;
+            /* Fixed dimensions ensure a perfect circle */
+            width: 320px;
+            height: 320px;
+            flex-shrink: 0;
+        }
+
+        /* The container for the canvas */
+        .canvas-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Center Text Overlay */
+        .center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 0;
+            /* Behind the hover tooltips of chart */
+            pointer-events: none;
+            /* Let clicks pass through to chart */
+        }
+
+        .label-winner {
+            font-size: 12px;
+            color: #8898aa;
+            /* Gray */
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .label-party {
+            font-size: 32px;
+            color: #068525;
+            /* BJP Green */
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .label-votes {
+            font-size: 14px;
+            color: #8898aa;
+            font-weight: 500;
+        }
+
+        /* --- Right Side: Cards Section --- */
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: default;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Left side of card (Color + Info) */
+        .card-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .color-box {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .party-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .party-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .party-votes-sub {
+            font-size: 13px;
+            color: #8898aa;
+            font-weight: 500;
+        }
+
+        /* Right side of card (Percentage) */
+        .card-right {
+            text-align: right;
+        }
+
+        .percentage-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #12263f;
+            /* Dark Blue */
+        }
+
+        /* --- Specific Colors --- */
+        .bg-bjp {
+            background-color: #068525;
+        }
+
+        .bg-aap {
+            background-color: #00a896;
+        }
+
+        .bg-inc {
+            background-color: #e01717;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .dashboard {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+
+            .chart-section {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+
+
+
+        /* Footer Styles from login.html */
+        footer {
+            background: linear-gradient(to right, var(--blue), #00005a);
+            color: var(--white);
+            padding: 70px 0 30px;
+            margin-top: 2.5%;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            /* Added padding for responsiveness */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Hind', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 50px;
+            background: var(--saffron);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--saffron);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: var(--saffron);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: var(--blue);
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--saffron);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 30px 15px 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pie-chart-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .chart-legend {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .legend-item {
+                flex: 1 1 calc(50% - 0.5rem);
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .candidate-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .candidate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-header {
+                display: none;
+            }
+
+            .candidate-row {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid var(--light-stroke);
+                padding-bottom: 1rem;
+            }
+
+            .candidate-cell {
+                flex: 1 0 50%;
+                border: none;
+                padding: 0.5rem 0;
+            }
+
+            .candidate-cell:nth-child(1)::before {
+                content: "Candidate: ";
+                font-weight: bold;
+                color: var(--navy);
+            }
+
+            .candidate-cell:nth-child(2)::before {
+                content: "Party: ";
+                font-weight: bold;
+                color: var(--navy);
+            }
+
+            .candidate-cell:nth-child(3)::before {
+                content: "Photo: ";
+                font-weight: bold;
+                color: var(--navy);
+            }
+
+            .candidate-cell:nth-child(4)::before {
+                content: "Votes: ";
+                font-weight: bold;
+                color: var(--navy);
+            }
+
+            .pie-chart-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legend-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion) {
+
+            .vote-animation,
+            .pulse-dot,
+            .pie-slice {
+                animation: none !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
